@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Trophy, ExternalLink, ListChecks, HelpCircle, CheckCircle } from 'lucide-react';
+import { Trophy, ExternalLink, ListChecks, HelpCircle, CheckCircle, Wallet, ArrowRight } from 'lucide-react';
 import { Dictionary } from '../types';
 
 interface ScavengerHuntWidgetProps {
@@ -35,7 +35,7 @@ const TRIVIA_QUESTIONS: TriviaQuestion[] = [
 ];
 
 export default function ScavengerHuntWidget({ dict }: ScavengerHuntWidgetProps) {
-  const [activeTab, setActiveTab] = useState<'info' | 'objectives' | 'trivia'>('info');
+  const [activeTab, setActiveTab] = useState<'info' | 'objectives' | 'registration' | 'trivia'>('info');
   const [currentTriviaIdx, setCurrentTriviaIdx] = useState(0);
   const [selectedOpt, setSelectedOpt] = useState<number | null>(null);
   const [showAnswerResult, setShowAnswerResult] = useState<boolean>(false);
@@ -90,7 +90,7 @@ export default function ScavengerHuntWidget({ dict }: ScavengerHuntWidgetProps) 
         </div>
 
         {/* Tab Buttons for Submodules */}
-        <div className="grid grid-cols-3 gap-1 rounded-xl bg-purple-950/30 p-1 border border-purple-900/20 mb-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-1 rounded-xl bg-purple-950/30 p-1 border border-purple-900/20 mb-5">
           <button
             onClick={() => setActiveTab('info')}
             className={`rounded-lg py-1.5 text-xs font-semibold tracking-wide transition-all ${
@@ -99,7 +99,7 @@ export default function ScavengerHuntWidget({ dict }: ScavengerHuntWidgetProps) 
                 : 'text-purple-300/70 hover:text-white hover:bg-white/5'
             }`}
           >
-            Overview
+            {dict.hunt_tab_info}
           </button>
           <button
             onClick={() => setActiveTab('objectives')}
@@ -109,7 +109,17 @@ export default function ScavengerHuntWidget({ dict }: ScavengerHuntWidgetProps) 
                 : 'text-purple-300/70 hover:text-white hover:bg-white/5'
             }`}
           >
-            Objectives
+            {dict.hunt_tab_objectives}
+          </button>
+          <button
+            onClick={() => setActiveTab('registration')}
+            className={`rounded-lg py-1.5 text-xs font-semibold tracking-wide transition-all ${
+              activeTab === 'registration'
+                ? 'bg-[#9333ea] text-white shadow-md shadow-purple-950'
+                : 'text-purple-300/70 hover:text-white hover:bg-white/5'
+            }`}
+          >
+            {dict.hunt_tab_register}
           </button>
           <button
             onClick={() => {
@@ -122,7 +132,7 @@ export default function ScavengerHuntWidget({ dict }: ScavengerHuntWidgetProps) 
                 : 'text-purple-300/70 hover:text-white hover:bg-white/5'
             }`}
           >
-            Trivia Quiz
+            {dict.hunt_tab_trivia}
           </button>
         </div>
 
@@ -165,6 +175,68 @@ export default function ScavengerHuntWidget({ dict }: ScavengerHuntWidgetProps) 
                   <span>{dict.hunt_rule_3}</span>
                 </li>
               </ul>
+            </div>
+          )}
+
+          {activeTab === 'registration' && (
+            <div className="fade-in text-slate-300 font-sans space-y-4">
+              <div>
+                <h3 className="text-base font-extrabold text-[#c084fc] flex items-center gap-2">
+                  <Wallet className="h-4 w-4 text-purple-400" />
+                  {dict.reg_header}
+                </h3>
+                <p className="text-xs text-slate-400 mt-1">
+                  {dict.reg_desc}
+                </p>
+              </div>
+
+              {/* Primary call to action to visit hub.vgdh.io with ref */}
+              <a
+                href="https://hub.vgdh.io/?ref=2912d644"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between gap-3 rounded-xl bg-purple-900/40 border border-purple-500/30 p-3 hover:bg-purple-900/60 hover:border-purple-400/50 transition-all duration-300"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
+                  <span className="text-xs font-bold text-white tracking-wide">
+                    {dict.reg_btn_visit}
+                  </span>
+                </div>
+                <ArrowRight className="h-4 w-4 text-purple-300 transition-transform group-hover:translate-x-1" />
+              </a>
+
+              {/* Steps to add rewards wallet */}
+              <div className="rounded-xl bg-slate-900/60 border border-purple-900/30 p-4">
+                <span className="block text-xs font-bold uppercase tracking-wider text-purple-300 mb-2">
+                  {dict.reg_step_title}
+                </span>
+                <ol className="space-y-1.5 text-xs text-slate-300 leading-relaxed font-sans">
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-purple-400 font-semibold">•</span>
+                    <span>{dict.reg_step_1}</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-purple-400 font-semibold">•</span>
+                    <span>{dict.reg_step_2}</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-purple-400 font-semibold">•</span>
+                    <span>{dict.reg_step_3}</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-purple-400 font-semibold">•</span>
+                    <span>{dict.reg_step_4}</span>
+                  </li>
+                </ol>
+              </div>
+
+              {/* Wallet registration highlight card */}
+              <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-3 text-center">
+                <p className="text-[11px] font-semibold text-amber-300">
+                  {dict.reg_wallet_warning}
+                </p>
+              </div>
             </div>
           )}
 

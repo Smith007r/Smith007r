@@ -51,4 +51,17 @@ export interface Dictionary {
   theme_gaming: string;
   theme_clean: string;
   activity_header: string;
+  hunt_tab_info: string;
+  hunt_tab_objectives: string;
+  hunt_tab_trivia: string;
+  hunt_tab_register: string;
+  reg_header: string;
+  reg_desc: string;
+  reg_btn_visit: string;
+  reg_step_title: string;
+  reg_step_1: string;
+  reg_step_2: string;
+  reg_step_3: string;
+  reg_step_4: string;
+  reg_wallet_warning: string;
 }

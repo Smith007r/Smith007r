@@ -297,20 +297,33 @@ export default function App() {
                 </div>
 
                 {/* Social links */}
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-3">
                   <a
                     href="https://t.me/GetVerse/177601"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="h-10 w-10 rounded-xl bg-purple-950/30 border border-purple-900/20 hover:border-purple-400 flex items-center justify-center text-purple-300 hover:text-white transition cursor-pointer"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-950/30 border border-purple-900/20 hover:border-purple-400 text-purple-300 hover:text-white transition duration-300 cursor-pointer text-xs font-bold"
                   >
-                    <Send className="h-5 w-5" />
+                    <Send className="h-4 w-4" />
+                    <span>Telegram</span>
                   </a>
                   <a
-                    href="#"
-                    className="h-10 w-10 rounded-xl bg-purple-950/30 border border-purple-900/20 hover:border-purple-400 flex items-center justify-center text-purple-300 hover:text-white transition cursor-pointer"
+                    href="https://x.com/VerseEcosystem"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-950/30 border border-purple-900/20 hover:border-purple-400 text-purple-300 hover:text-white transition duration-300 cursor-pointer text-xs font-bold"
                   >
-                    <Twitter className="h-5 w-5" />
+                    <Twitter className="h-4 w-4" />
+                    <span>@VerseEcosystem</span>
+                  </a>
+                  <a
+                    href="https://x.com/BitcoinCom"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-950/30 border border-purple-900/20 hover:border-emerald-500/50 text-purple-300 hover:text-white transition duration-300 cursor-pointer text-xs font-bold"
+                  >
+                    <Twitter className="h-4 w-4 text-[#fa9e1b]" />
+                    <span>Follow @Bitcoin.com</span>
                   </a>
                 </div>
               </div>
