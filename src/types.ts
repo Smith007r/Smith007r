@@ -1,0 +1,54 @@
+export type LanguageCode =
+  | 'en'
+  | 'bn'
+  | 'hi'
+  | 'ja'
+  | 'es'
+  | 'ar'
+  | 'fr'
+  | 'de'
+  | 'ru'
+  | 'zh';
+
+export interface Dictionary {
+  welcome_title: string;
+  welcome_sub: string;
+  welcome_btn: string;
+  logo_name: string;
+  btc_label: string;
+  btc_loading: string;
+  btc_error: string;
+  utc_clock: string;
+  utc_subtitle: string;
+  hunt_title: string;
+  hunt_sub: string;
+  hunt_desc: string;
+  hunt_btn: string;
+  hunt_status: string;
+  hunt_rewards: string;
+  hunt_rules_title: string;
+  hunt_rule_1: string;
+  hunt_rule_2: string;
+  hunt_rule_3: string;
+  user_title: string;
+  user_subtitle: string;
+  user_placeholder: string;
+  status_lbl: string;
+  status_typing: string;
+  status_weak: string;
+  status_good: string;
+  status_premium: string;
+  status_invalid: string;
+  btn_gen: string;
+  btn_copy: string;
+  btn_copied: string;
+  btn_tg: string;
+  credits_by: string;
+  mentor_title: string;
+  theme_label: string;
+  theme_cyber: string;
+  theme_crypto: string;
+  theme_gaming: string;
+  theme_clean: string;
+  activity_header: string;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Verse Hub",
+  "description": "Explore, learn, and earn with the community. Features a live UTC clock, community scavenger hunts, multi-language support, real-time Bitcoin price tracker, and custom username security generator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
