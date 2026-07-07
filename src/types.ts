@@ -64,4 +64,16 @@ export interface Dictionary {
   reg_step_3: string;
   reg_step_4: string;
   reg_wallet_warning: string;
+  swap_title: string;
+  swap_subtitle: string;
+  swap_connect_wallet: string;
+  swap_wallet_modal_title: string;
+  swap_wallet_connected: string;
+  swap_button_execute: string;
+  swap_rate: string;
+  swap_gas_fee: string;
+  swap_balance: string;
+  swap_success_title: string;
+  swap_success_desc: string;
+  swap_slippage: string;
 }
